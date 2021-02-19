@@ -1,0 +1,66 @@
+<section>
+  <div class="MainCard">
+    <div class="SidePanel left animate__animated animate__fadeInLeft">
+      <ul>
+        <div class="SidePanel-options" (click)="changePage('prof')">
+          <i class="fas fa-user"></i> Profile
+        </div>
+        <div class="SidePanel-options" (click)="changePage('pay')">
+          <i class="fas fa-money-bill"></i> Payments
+        </div>
+        <div class="SidePanel-options selected">
+          <i class="fas fa-users"></i> Admin
+        </div>
+      </ul>
+    </div>
+    <div class="mobile-options top animate__animated animate__fadeInDownBig">
+      <button mat-raised-button (click)="changePage('prof')">
+        <i class="fas fa-user"></i> Profile
+      </button>
+      <button mat-raised-button (click)="changePage('pay')">
+        <i class="fas fa-money-bill"></i> Payments
+      </button>
+      <button mat-raised-button class="selected">
+        <i class="fas fa-users"></i> Admin
+      </button>
+    </div>
+    <div class="CenterPanel">
+      <div class="Content">
+        <div class="Content-Option animate__animated animate__zoomIn">
+          <i class="fas fa-calendar-alt fa-7x"></i>
+          <h4>Edit Events</h4>
+        </div>
+        <div class="Content-Option animate__animated animate__zoomIn">
+          <i class="fas fa-book fa-7x"></i>
+          <h4>Blog News Editor</h4>
+        </div>
+        <div class="Content-Option animate__animated animate__zoomIn">
+          <i class="fas fa-users fa-7x"></i>
+          <h4>Manage Members</h4>
+        </div>
+        <div class="Content-Option animate__animated animate__zoomIn">
+          <i class="fas fa-money-bill-alt fa-7x"></i>
+          <h4>Accounting Tools</h4>
+        </div>
+      </div>
+    </div>
+    <div class="mobile-options bottom animate__animated animate__fadeInUpBig">
+      <button mat-raised-button (click)="changePage('set')">
+        <i class="fas fa-cog"></i> Settings
+      </button>
+      <button mat-raised-button class="logOut">
+        <i class="fas fa-sign-out-alt"></i> Log Out
+      </button>
+    </div>
+    <div class="SidePanel Right animate__animated animate__fadeInRight">
+      <ul>
+        <div class="SidePanel-options" (click)="changePage('set')">
+          <i class="fas fa-cog"></i> Settings
+        </div>
+        <div class="SidePanel-options logOut">
+          <i class="fas fa-sign-out-alt"></i> Log Out
+        </div>
+      </ul>
+    </div>
+  </div>
+</section>

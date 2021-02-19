@@ -1,0 +1,66 @@
+<section>
+  <div class="left">
+    <div class="content">
+      <img src="assets/ymfTrans.png" alt="" />
+      <p>
+        To assist, represent, coordinate and/or network Zimbabwean youths in
+        mining.
+      </p>
+    </div>
+  </div>
+  <div class="right">
+    <div class="formPanel">
+      <img class="Icon" src="assets/ymfTrans.png" alt="" />
+      <h1>Y.M.F Members Log In</h1>
+      <mat-form-field appearance="standard" style="width: 80%">
+        <mat-label>Email or Phone Number</mat-label>
+        <input
+          [(ngModel)]="EmailPhone"
+          (ngModelChange)="changeEmailPhone($event)"
+          matInput
+          type="text"
+          placeholder="Email@email.com or mobile number "
+        />
+      </mat-form-field>
+      <br />
+      <mat-form-field appearance="standard" style="width: 80%">
+        <mat-label>Password</mat-label>
+        <input
+          [(ngModel)]="Password"
+          (ngModelChange)="changePassword($event)"
+          type="password"
+          matInput
+          placeholder="Password"
+        />
+      </mat-form-field>
+      <br />
+      <button
+        *ngIf="!loggingIn"
+        mat-raised-button
+        (disabled)="(!EmailPhoneIsValid && !Password)"
+        (click)="LogIn($event)"
+      >
+        Log In
+      </button>
+      <div class="sk-chase" *ngIf="loggingIn">
+        <div class="sk-chase-dot"></div>
+        <div class="sk-chase-dot"></div>
+        <div class="sk-chase-dot"></div>
+        <div class="sk-chase-dot"></div>
+        <div class="sk-chase-dot"></div>
+        <div class="sk-chase-dot"></div>
+      </div>
+      <br />
+      <br />
+      <span>Forgot Password? <a (click)="changePage('reset')">Reset</a></span>
+      <br />
+      <br />
+      <span
+        >Not a Y.M.F member?<a (click)="changePage('signup')"> Sign Up</a></span
+      >
+      <br />
+      <br />
+    </div>
+  </div>
+  <div class="divider"></div>
+</section>

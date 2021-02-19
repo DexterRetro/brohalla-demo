@@ -1,0 +1,84 @@
+<section>
+  <div class="MainCard">
+    <div class="SidePanel left animate__animated animate__fadeInLeft">
+      <ul>
+        <div class="SidePanel-options" (click)="changePage('prof')">
+          <i class="fas fa-user"></i> Profile
+        </div>
+        <div class="SidePanel-options selected">
+          <i class="fas fa-money-bill"></i> Payments
+        </div>
+        <div class="SidePanel-options" (click)="changePage('admin')">
+          <i class="fas fa-users"></i> Admin
+        </div>
+      </ul>
+    </div>
+    <div class="mobile-options top animate__animated animate__fadeInDownBig">
+      <button mat-raised-button (click)="changePage('prof')">
+        <i class="fas fa-user"></i> Profile
+      </button>
+      <button mat-raised-button class="selected">
+        <i class="fas fa-money-bill"></i> Payments
+      </button>
+      <button mat-raised-button (click)="changePage('admin')">
+        <i class="fas fa-users"></i> Admin
+      </button>
+    </div>
+    <div class="CenterPanel">
+      <div class="Payment-Form animate__animated animate__fadeInUp">
+        <h2>Membership Payment</h2>
+
+        <mat-form-field appearance="standard" floatLabel="false">
+          <mat-label>Membership Type</mat-label>
+          <mat-select placeholder="Payment Option">
+            <mat-option *ngFor="let ty of membershipType" [value]="ty">
+              {{ ty }}
+            </mat-option>
+          </mat-select> </mat-form-field
+        ><br />
+        <mat-form-field appearance="standard">
+          <mat-label>Payment Method</mat-label>
+          <mat-select placeholder="Payment Option">
+            <mat-option *ngFor="let ty of membershipType" [value]="ty">
+              {{ ty }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <br />
+        <div>
+          <mat-label>+263 </mat-label>
+          <mat-form-field>
+            <mat-label>Mobile Number</mat-label>
+            <input matInput placeholder="phone Number" />
+            <mat-hint class="Phone Input">(E.g 0771 234 567)</mat-hint>
+          </mat-form-field>
+          <br />
+          <mat-hint style="color: red">Eccocash and OneMoney Only</mat-hint>
+        </div>
+
+        <br />
+        <br />
+        <br />
+        <button mat-raised-button class="proceed">PAY</button>
+      </div>
+    </div>
+    <div class="mobile-options bottom animate__animated animate__fadeInUpBig">
+      <button mat-raised-button (click)="changePage('set')">
+        <i class="fas fa-cog"></i> Settings
+      </button>
+      <button mat-raised-button class="logOut">
+        <i class="fas fa-sign-out-alt"></i> Log Out
+      </button>
+    </div>
+    <div class="SidePanel Right animate__animated animate__fadeInRight">
+      <ul>
+        <div class="SidePanel-options" (click)="changePage('set')">
+          <i class="fas fa-cog"></i> Settings
+        </div>
+        <div class="SidePanel-options logOut">
+          <i class="fas fa-sign-out-alt"></i> Log Out
+        </div>
+      </ul>
+    </div>
+  </div>
+</section>

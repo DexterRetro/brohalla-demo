@@ -1,0 +1,75 @@
+<section>
+  <div class="MainCard">
+    <div class="SidePanel left animate__animated animate__fadeInLeft">
+      <ul>
+        <div class="SidePanel-options selected">
+          <i class="fas fa-user"></i> Profile
+        </div>
+        <div class="SidePanel-options" (click)="changePage('pay')">
+          <i class="fas fa-money-bill"></i> Payments
+        </div>
+        <div class="SidePanel-options" (click)="changePage('admin')">
+          <i class="fas fa-users"></i> Admin
+        </div>
+      </ul>
+    </div>
+    <div class="mobile-options top animate__animated animate__fadeInDownBig">
+      <button mat-raised-button class="selected">
+        <i class="fas fa-user"></i> Profile
+      </button>
+      <button mat-raised-button (click)="changePage('pay')">
+        <i class="fas fa-money-bill"></i> Payments
+      </button>
+      <button mat-raised-button (click)="changePage('admin')">
+        <i class="fas fa-users"></i> Admin
+      </button>
+    </div>
+    <div class="CenterPanel animate__animated animate__fadeInUp">
+      <div class="Profile">
+        <img class="Profile-Image" src="assets/noImage.jpg" alt="" />
+        <div class="Profile-Details">
+          <h3>Y.M.F Member Profile</h3>
+          <div class="userInfo">
+            <b>First Name(s):</b> {{ user.FirstName }}<br /><br />
+            <b>Surname:</b> {{ user.Surname }}<br /><br />
+            <b>National ID:</b> {{ user.idNumber }}<br /><br />
+            <b>YMF Membership ID:</b> bak<br /><br />
+            <b>Province:</b> {{ user.Province }}<br />
+          </div>
+        </div>
+      </div>
+
+      <div class="BottomText">
+        <span
+          ><b>Membership Status:</b>
+          Active
+        </span>
+        <br />
+        <span
+          ><b>Membership Expire Date:</b>
+          <i>2021/4/6</i>
+        </span>
+        <br />
+        <br />
+      </div>
+    </div>
+    <div class="mobile-options bottom animate__animated animate__fadeInUpBig">
+      <button mat-raised-button (click)="changePage('set')">
+        <i class="fas fa-cog"></i> Settings
+      </button>
+      <button mat-raised-button class="logOut">
+        <i class="fas fa-sign-out-alt"></i> Log Out
+      </button>
+    </div>
+    <div class="SidePanel Right animate__animated animate__fadeInRight">
+      <ul>
+        <div class="SidePanel-options" (click)="changePage('set')">
+          <i class="fas fa-cog"></i> Settings
+        </div>
+        <div class="SidePanel-options">
+          <i class="fas fa-sign-out-alt"></i> Log Out
+        </div>
+      </ul>
+    </div>
+  </div>
+</section>

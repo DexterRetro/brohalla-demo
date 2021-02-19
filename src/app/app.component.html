@@ -1,0 +1,103 @@
+<div class="header-top animate__animated animate__fadeInDownBig">
+  <div class="logo">
+    <img src="assets/ymfIcon.png" />
+    <h3>Y.M.F</h3>
+  </div>
+  <ul class="header-links-big">
+    <li>
+      <a href="#" class="home" routerLink="/home">HOME</a>
+    </li>
+    <li>
+      <a href="#" class="membership" routerLink="/member">MEMBERSHIP</a>
+    </li>
+    <li>
+      <a href="#" class="about" routerLink="/about">ABOUT</a>
+    </li>
+  </ul>
+  <div
+    class="header-links-small animate__animated animate__fadeIn"
+    *ngIf="smallScreenState"
+  >
+    <div class="brd"></div>
+    <a href="#" class="home" routerLink="/home">HOME</a>
+    <div class="brd"></div>
+    <a href="#" class="membership" routerLink="/member">MEMBERSHIP</a>
+    <div class="brd"></div>
+    <a href="#" class="about" routerLink="/about">ABOUT</a>
+    <div class="brd"></div>
+  </div>
+  <div class="UserAcc" *ngIf="LoggedIn">
+    <img src="assets/noImage.jpg" alt="UserIcon" />
+    <h4>Member Name</h4>
+  </div>
+  <div class="humburger" (click)="ToggleMenu()">
+    <div class="lines"></div>
+    <div class="lines"></div>
+    <div class="lines"></div>
+  </div>
+</div>
+<router-outlet></router-outlet>
+<footer>
+  <div class="main-content">
+    <div class="left box">
+      <h2>Find Us On</h2>
+      <div class="social">
+        <a href="#"><span class="fab fa-facebook-f"></span></a>
+        <a href="#"><span class="fab fa-twitter"></span></a>
+        <a href="#"><span class="fab fa-instagram"></span></a>
+        <a href="#"><span class="fab fa-whatsapp"></span></a>
+      </div>
+      <h2>Sponsors and Partners</h2>
+      <div class="sponsors">
+        <img *ngFor="let image of Images; let i = index" [src]="image" alt="" />
+      </div>
+    </div>
+    <div class="center box">
+      <h2>Address</h2>
+      <div class="content">
+        <div class="place">
+          <span class="fas fa-map-marker-alt"></span>
+          <span class="text">40 Toynbee Avenue Paddonhurst Bulawayo</span>
+        </div>
+        <div class="phone">
+          <span class="fas fa-phone-alt"></span>
+          <span class="text">+263 773 625 406 </span>
+        </div>
+        <div class="email">
+          <span class="fas fa-envelope"></span>
+          <span class="text">youngminers@gmail.com</span>
+        </div>
+      </div>
+    </div>
+    <div class="right box">
+      <h2>Contact Us</h2>
+      <div class="content">
+        <form action="#">
+          <div class="email">
+            <div class="text">Email *</div>
+            <input type="email" style="color: white" required />
+          </div>
+          <div class="msg">
+            <div class="text">Message *</div>
+            <textarea
+              rows="2"
+              cols="25"
+              required
+              style="color: white"
+            ></textarea>
+          </div>
+          <div class="btn">
+            <button type="submit">Send</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="bottom">
+    <span class="credit">
+      created by<a href="#"> DexterRetro </a> @brohalla | &copy;<span>
+        {{ Year }} All rights reserved</span
+      >
+    </span>
+  </div>
+</footer>

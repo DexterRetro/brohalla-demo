@@ -1,0 +1,15 @@
+<div class="Main">
+  <h1 class="animate__animated animate__fadeInDown">About Us</h1>
+  <div class="cards">
+    <div
+      class="card animate__animated animate__fadeInUp"
+      *ngFor="let abt of aboutData; let i = index"
+      [routerLink]="abt._id"
+    >
+      <i class="fas fa-{{ abt.Icon }} fa-10x"></i>
+      <div class="container animate__animated animate__zoomIn">
+        <h2>{{ abt.MainHeader }}</h2>
+      </div>
+    </div>
+  </div>
+</div>

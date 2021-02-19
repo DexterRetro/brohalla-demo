@@ -1,0 +1,124 @@
+<header>
+  <div class="shadow"></div>
+  <img
+    src="assets/ymfTrans.png"
+    #translate
+    class="YMFLOGO translate noMobile animate__animated animate__fadeInUp"
+    data-speed="0.2"
+    alt=""
+  />
+  <img
+    src="assets/MobileBackGround.jpg"
+    #translate
+    class="PcBg translate noMobile animate__animated animate__fadeIn"
+    data-speed="-0.25"
+    alt=""
+  />
+  <img
+    src="assets/MobileBackGround.jpg"
+    class="mobileBg animate__animated animate__fadeIn"
+    alt="mobileBg"
+  />
+</header>
+<section class="about">
+  <div class="shadowScrow"></div>
+  <div class="container">
+    <div class="content">
+      <h3 class="title">
+        Our Vision
+        <div class="border"></div>
+      </h3>
+      <p class="text">
+        The Foundation envisions a society where young people are involved in
+        their own development and that of their communities.
+        <br />
+        <br />
+        <b>Our Mission</b>
+        <br />
+        <br />
+        To assist, represent, coordinate and/or network Zimbabwean youths in
+        mining.
+        <br />
+        <br />
+        <b>We Value</b>
+        <br />
+        • Teamwork
+        <br />
+        • Integrity
+        <br />
+        • Empowerment
+        <br />
+        • Accountability
+        <br />
+        • Transparency
+        <br />
+        • Innovation
+      </p>
+    </div>
+    <div class="imgContainer">
+      <img src="assets/ymflogo.jpg" alt="" />
+    </div>
+  </div>
+</section>
+<section class="news">
+  <div class="newsBox" *ngFor="let news of NewsInfo; let i = index">
+    <div style="max-height: 250px; overflow: hidden">
+      <img
+        class="zoomImg animate__animated animate__zoomIn"
+        *ngIf="i === currentNewsIndex"
+        src="assets/{{ news.Picture }}"
+        alt=""
+      />
+      <div
+        *ngIf="i === currentNewsIndex"
+        class="imgShadow animate__animated animate__fadeIn"
+      ></div>
+    </div>
+
+    <div
+      *ngIf="i === currentNewsIndex"
+      class="NewsText animate__animated animate__fadeInRight"
+    >
+      <h1 class="animate__animated animate__zoomIn">{{ news.Topic }}</h1>
+      <summary class="animate__animated animate__zoomIn">
+        {{ news.Summary }}
+      </summary>
+      <br />
+    </div>
+  </div>
+</section>
+<section class="events">
+  <div class="leftBox">
+    <div class="content">
+      <h1>YMF Events and notices</h1>
+      <p>THEME: Mining Youthnomics, Oppotunity, Sustainability And Agility</p>
+    </div>
+    <img class="eventsViewLogo" src="assets/ymfTrans.png" alt="" />
+  </div>
+  <div class="rightBox">
+    <ul *ngIf="Events">
+      <li *ngFor="let item of Events">
+        <div class="time">
+          <h2>
+            {{ getDay(item.date) }}<br /><span>{{ getMonth(item.date) }}</span>
+          </h2>
+        </div>
+        <div class="details">
+          <h3>{{ item.Title }}</h3>
+          <p>{{ item.detail }}</p>
+          <a style="margin-bottom: 5px" href="#">View Details</a>
+        </div>
+        <div style="clear: both"></div>
+      </li>
+    </ul>
+    <div style="margin: auto; text-align: center" *ngIf="!Events">
+      <div class="sk-folding-cube">
+        <div class="sk-cube1 sk-cube"></div>
+        <div class="sk-cube2 sk-cube"></div>
+        <div class="sk-cube4 sk-cube"></div>
+        <div class="sk-cube3 sk-cube"></div>
+      </div>
+      <p>Loading Events...</p>
+    </div>
+  </div>
+</section>

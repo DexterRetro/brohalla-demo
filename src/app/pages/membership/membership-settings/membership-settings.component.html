@@ -1,0 +1,133 @@
+<section>
+  <div class="MainCard">
+    <div class="SidePanel left animate__animated animate__fadeInLeft">
+      <ul>
+        <div class="SidePanel-options" (click)="changePage('prof')">
+          <i class="fas fa-user"></i> Profile
+        </div>
+        <div class="SidePanel-options" (click)="changePage('pay')">
+          <i class="fas fa-money-bill"></i> Payments
+        </div>
+        <div class="SidePanel-options" (click)="changePage('admin')">
+          <i class="fas fa-users"></i> Admin
+        </div>
+      </ul>
+    </div>
+    <div class="mobile-options top animate__animated animate__fadeInDownBig">
+      <button mat-raised-button (click)="changePage('prof')">
+        <i class="fas fa-user"></i> Profile
+      </button>
+      <button mat-raised-button (click)="changePage('pay')">
+        <i class="fas fa-money-bill"></i> Payments
+      </button>
+      <button mat-raised-button (click)="changePage('admin')">
+        <i class="fas fa-users"></i> Admin
+      </button>
+    </div>
+    <div class="CenterPanel animate__animated animate__fadeInUp">
+      <div class="formPanel">
+        <h1>Y.M.F Profile Settings</h1>
+        <div>
+          <img class="Profile-Image" src="assets/noImage.jpg" alt="" />
+          <div class="ImageChange">
+            Change Photo <i class="fas fa-pencil-alt"></i>
+          </div>
+        </div>
+        <mat-form-field appearance="standard" style="width: 80%">
+          <mat-label>First Name(s)</mat-label>
+          <input
+            matInput
+            placeholder="Your Full First Names"
+            [(ngModel)]="user.FirstName"
+            (ngModelChange)="toCheckFistName($event)"
+          />
+        </mat-form-field>
+        <p style="color: red" *ngIf="!FirstNameValid">
+          Please Enter A valid Name
+        </p>
+        <mat-form-field appearance="standard" style="width: 80%">
+          <mat-label>Surname</mat-label>
+          <input
+            matInput
+            placeholder="Your Full Surname"
+            [(ngModel)]="user.Surname"
+            (ngModelChange)="toCheckSurname($event)"
+          />
+        </mat-form-field>
+        <p style="color: red" *ngIf="!SurnameValid">
+          Please Enter A valid Surname
+        </p>
+        <mat-form-field appearance="standard" style="width: 80%">
+          <mat-label>Email </mat-label>
+          <input
+            matInput
+            placeholder="Email@email.com or mobile number "
+            [(ngModel)]="user.email"
+            (ngModelChange)="toCheckEmail($event)"
+          />
+        </mat-form-field>
+        <p style="color: red" *ngIf="!emailValid">Please Enter A valid Email</p>
+        <mat-form-field appearance="standard" style="width: 80%">
+          <mat-label>Phone Number </mat-label>
+          <input
+            matInput
+            placeholder="mobile number "
+            [(ngModel)]="user.phoneNumber"
+            (ngModelChange)="toCheckPhone($event)"
+          />
+          <mat-hint>e.g 0771 234 567 </mat-hint>
+        </mat-form-field>
+        <p style="color: red" *ngIf="!phoneNumberValid">
+          Please Enter A valid Phone Number
+        </p>
+        <mat-form-field appearance="standard" style="width: 80%">
+          <mat-label>National Id Number</mat-label>
+          <input
+            matInput
+            placeholder="I.D"
+            [(ngModel)]="user.idNumber"
+            (ngModelChange)="toCheckID($event)"
+          />
+        </mat-form-field>
+        <p style="color: red" *ngIf="!idNumberValid">
+          Please Enter A valid I.D Number
+        </p>
+        <button
+          class="update"
+          mat-raised-button
+          *ngIf="!loggingIn"
+          (click)="Submit()"
+        >
+          <i class="fas fa-pencil-alt"></i>
+          UPDATE
+        </button>
+        <div class="sk-chase" *ngIf="loggingIn">
+          <div class="sk-chase-dot"></div>
+          <div class="sk-chase-dot"></div>
+          <div class="sk-chase-dot"></div>
+          <div class="sk-chase-dot"></div>
+          <div class="sk-chase-dot"></div>
+          <div class="sk-chase-dot"></div>
+        </div>
+      </div>
+    </div>
+    <div class="mobile-options bottom animate__animated animate__fadeInUpBig">
+      <button mat-raised-button class="selected">
+        <i class="fas fa-cog"></i> Settings
+      </button>
+      <button mat-raised-button class="logOut">
+        <i class="fas fa-sign-out-alt"></i> Log Out
+      </button>
+    </div>
+    <div class="SidePanel Right animate__animated animate__fadeInRight">
+      <ul>
+        <div class="SidePanel-options selected">
+          <i class="fas fa-cog"></i> Settings
+        </div>
+        <div class="SidePanel-options logOut">
+          <i class="fas fa-sign-out-alt"></i> Log Out
+        </div>
+      </ul>
+    </div>
+  </div>
+</section>
